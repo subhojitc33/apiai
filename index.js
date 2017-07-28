@@ -9,7 +9,7 @@ var username=process.env.SF_USER_NAME;
 var password=process.env.SF_PASSWORD;
 const express = require('express');
 const bodyParser = require('body-parser');
-var nforce = require('node-salesforce');
+var sf = require('node-salesforce');
    
 
 //Connected App credentials for OAUTH request
