@@ -47,7 +47,7 @@ restService.post('/hook', function (req, res) {
 
         if (req.body) {
             var requestBody = req.body;
-
+            console.log(requestBody);
             if (requestBody.result) {
                 speech = '';
 
@@ -57,17 +57,17 @@ restService.post('/hook', function (req, res) {
                 }
 
                 if (requestBody.result.action) {
-                    var body={key:requestBody.result.action};
+                    
+                    speech += 'action: ' + requestBody.result.action;
+                }
+            }
+        }
+       var body={key:requestBody.result.action};
                      conn.apex.post("/analyzeRequest", body, function(res)  {
                    // if (err) { return console.error(err); }
                     console.log("total : " + result);
                     //console.log("fetched : " + result.records.length);
                   });
-                    speech += 'action: ' + requestBody.result.action;
-                }
-            }
-        }
-
         console.log('result: ', speech);
 
         return res.json({
