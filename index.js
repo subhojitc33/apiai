@@ -41,6 +41,11 @@ restService.post('/hook', function (req, res) {
 
     console.log('hook request');
    console.log(conn.accessToken);
+   conn.query("SELECT Id, Name FROM Account", function(err, result) {
+  if (err) { return console.error(err); }
+  console.log("total : " + result.totalSize);
+  console.log("fetched : " + result.records.length);
+});
     try {
         var speech = 'empty speech';
 
