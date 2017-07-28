@@ -1,5 +1,5 @@
 {
-	"name": "API AI",
+	"name": "apiaiwebhooksf",
 	"description": "Salesforce-powered Skill for Alexa in the DreamHouse sample app",
 	"env": {
 		"SF_CLIENT_ID": {
