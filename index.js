@@ -13,39 +13,31 @@ var nforce = require('node-salesforce');
    
 
 //Connected App credentials for OAUTH request
-var org = nforce.createConnection({
-  clientId: clientId,
-  clientSecret: clientSecret,
-  redirectUri: redirectURI,
-  apiVersion: API, 
-  mode: 'single',
-  plugins: ['chatter']
+var conn = new sf.Connection({
+  // you can change loginUrl to connect to sandbox or prerelease env. 
+  loginUrl : 'https://login.salesforce.com' 
+});
+conn.login(username, password, function(err, userInfo) {
+  if (err) { return console.error(err); }
+  // Now you can get the access token and instance URL information. 
+  // Save them to establish connection next time. 
+  console.log(conn.accessToken);
+  console.log(conn.instanceUrl);
+  // logged in user property 
+  console.log("User ID: " + userInfo.id);
+  console.log("Org ID: " + userInfo.organizationId);
+  // ... 
 });
 
 
 
 const restService = express();
 restService.use(bodyParser.json());
-function getSessionID(){
-org.authenticate({ username: username, password: password}, function(err2, resp){
-	console.log(org.oauth.instance_url+'####'+org.oauth);
-		var oauth=resp;
-		org.oauth=resp;
-	org.apexRest({oauth:oauth, uri:'EchoCaseControl'},
-		function(err,result) {
-			if(err) {
-              console.log(err);
-              send_alexa_error(res,'An error occured checking for recents cases: '+err);
-            }
-            else {
-                
-            });
-    });
-}  
+
 restService.post('/hook', function (req, res) {
 
     console.log('hook request');
-   getSessionID();
+   console.log(conn.accessToken);
     try {
         var speech = 'empty speech';
 
