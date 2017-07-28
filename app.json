@@ -1,7 +1,26 @@
 {
-  "name": "API.AI webhook demonstration",
-  "description": "API.AI webhook demonstration",
-  "repository": "https://github.com/api-ai/apiai-webhook-sample",
-  "logo": "http://xvir.github.io/img/apiai.png",
-  "keywords": ["api.ai", "natural language"]
+	"name": "API AI",
+	"description": "Salesforce-powered Skill for Alexa in the DreamHouse sample app",
+	"env": {
+		"SF_CLIENT_ID": {
+			"description": "Consumer Key of your Salesforce Connected App",
+			"value": "3MVG9ZL0ppGP5UrAjkXOacFI9lqNFAA3UZbWkFy3RyiCKzE7PfmhttvbQo3MnEW.V2ccoEBQnktQuaI92PHcm"
+		},
+		"SF_CLIENT_SECRET": {
+			"description": "Consumer Secret of your Salesforce Connected App",
+			"value": "4700911389884901991"
+		},
+		"SF_USER_NAME": {
+			"description": "Salesforce username for your integration user",
+			"value": "subhojit_dev3@gmail.com"
+		},
+		"SF_PASSWORD": {
+			"description": "Salesforce password for your integration user",
+			"value": "November@2013XD1K3tYl2sQ318v5FhDu6huso"
+		},
+		"SF_REDIRECT_URI": {
+			"description": "Redirect URI of your Salesforce Connected App",
+			"value": "https://layla.amazon.com/api/skill/link/M2ZXTLNFRIDBRA"
+		}
+	}
 }
