@@ -9,8 +9,8 @@ var username=process.env.SF_USER_NAME;
 var password=process.env.SF_PASSWORD;
 const express = require('express');
 const bodyParser = require('body-parser');
-var nforce = require('nforce'),
-    chatter =require('nforce-chatter')(nforce);
+var nforce = require('node-salesforce');
+   
 
 //Connected App credentials for OAUTH request
 var org = nforce.createConnection({
