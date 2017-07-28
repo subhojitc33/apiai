@@ -1,5 +1,12 @@
 'use strict';
-
+var clientId = process.env.SF_CLIENT_ID;
+var clientSecret = process.env.SF_CLIENT_SECRET;
+var redirectURI = process.env.SF_REDIRECT_URI;
+var API = process.env.API || 'v32.0';
+var oauth_timeout = process.env.oauth_timeout || 5400;
+var DEBUG_ON = process.env.DEBUG_ON || true;
+var username=process.env.SF_USER_NAME;
+var password=process.env.SF_PASSWORD;
 const express = require('express');
 const bodyParser = require('body-parser');
 var nforce = require('nforce'),
