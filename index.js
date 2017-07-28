@@ -2,15 +2,43 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
+var nforce = require('nforce'),
+    chatter =require('nforce-chatter')(nforce);
+
+//Connected App credentials for OAUTH request
+var org = nforce.createConnection({
+  clientId: clientId,
+  clientSecret: clientSecret,
+  redirectUri: redirectURI,
+  apiVersion: API, 
+  mode: 'single',
+  plugins: ['chatter']
+});
+
 
 
 const restService = express();
 restService.use(bodyParser.json());
-
+function getSessionID(){
+org.authenticate({ username: username, password: password}, function(err2, resp){
+	console.log(org.oauth.instance_url+'####'+org.oauth);
+		var oauth=resp;
+		org.oauth=resp;
+	org.apexRest({oauth:oauth, uri:'EchoCaseControl'},
+		function(err,result) {
+			if(err) {
+              console.log(err);
+              send_alexa_error(res,'An error occured checking for recents cases: '+err);
+            }
+            else {
+                
+            });
+    });
+}  
 restService.post('/hook', function (req, res) {
 
     console.log('hook request');
-
+   getSessionID();
     try {
         var speech = 'empty speech';
 
