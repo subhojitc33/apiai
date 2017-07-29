@@ -61,9 +61,10 @@ restService.post('/hook', function (req, res) {
                     speech += 'action: ' + requestBody.result.action;
                    console.log('>>>'+requestBody.result.action);
                         var body={key:requestBody.result.action};
-                     conn.apex.post("/analyzeRequest/", body, function(res)  {
+                     conn.apex.post("/analyzeRequest/", body, function(resvar)  {
                    // if (err) { return console.error(err); }
-                    console.log("total : " + res);
+                    console.log("total : " + resvar);
+                        speech+=resvar;
                     //console.log("fetched : " + result.records.length);
                   });
                 }
