@@ -65,6 +65,12 @@ restService.post('/hook', function (req, res) {
                    // if (err) { return console.error(err); }
                     console.log("total : " + resvar);
                         speech+=resvar;
+                        
+                        return res.json({
+            speech: speech,
+            displayText: speech,
+            source: 'apiai-webhook-sample'
+        });
                     //console.log("fetched : " + result.records.length);
                   });
                 }
@@ -73,11 +79,7 @@ restService.post('/hook', function (req, res) {
   
         console.log('result: ', speech);
 
-        return res.json({
-            speech: speech,
-            displayText: speech,
-            source: 'apiai-webhook-sample'
-        });
+        
     } catch (err) {
         console.error("Can't process request", err);
 
