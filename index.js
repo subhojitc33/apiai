@@ -64,7 +64,7 @@ restService.post('/hook', function (req, res) {
                      conn.apex.post("/analyzeRequest/", body, function(errv,resvar)  {
                     if (errv) {  console.error(errv); }
                     console.log("total : " + JSON.stringify(resvar));
-                        speech+=resvar[;
+                        speech+=resvar;
                         
                         return res.json({
             speech: speech,
