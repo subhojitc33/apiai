@@ -55,8 +55,8 @@ restService.post('/hook', function (req, res) {
                     speech += requestBody.result.fulfillment.speech;
                     speech += ' ';
                 }
-
-                if (requestBody.result.action) {
+console.log('>>>'+requestBody.result.parameters.SearchtermText);
+                if (requestBody.result.parameters.SearchtermText!='') {
                     
                     speech += 'action: ' + requestBody.result.action;
                    console.log('>>>'+requestBody.result.parameters.SearchtermText);
