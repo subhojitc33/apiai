@@ -64,7 +64,8 @@ console.log('>>>'+requestBody.result.parameters.SearchtermText);
                      conn.apex.post("/analyzeRequest/", body, function(errv,resvar)  {
                     if (errv) {  console.error(errv); }
                     console.log("total : " +resvar.response.size()+'>>>'+ JSON.stringify(resvar));
-                      for(var i=0;i<resvar.response.size();i++){
+                        var i=0;
+                      for(i=0;i<resvar.response.size();i++){
                           var feedItemId=resvar.response[i].feeditem.Id;
                           var feedItemBody=resvar.response[i].feeditem.Body;
                           //var content=
