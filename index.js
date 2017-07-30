@@ -56,14 +56,14 @@ restService.post('/hook', function (req, res) {
                     speech += ' ';
                 }
 console.log('>>>'+requestBody.result.parameters.SearchtermText);
-              /*  if (requestBody.result.parameters.SearchtermText!='') {*/
+                if (requestBody.result.parameters.SearchtermText!='') {
                     
                     speech += 'action: ' + requestBody.result.action;
                    console.log('>>>'+requestBody.result.parameters.SearchtermText);
                         var body={key:requestBody.result.parameters.SearchtermText};
                      conn.apex.post("/analyzeRequest/", body, function(errv,resvar)  {
                     if (errv) {  console.error(errv); }
-                    console.log("total : " +resvar.response.size()+'>>>'+ JSON.stringify(resvar));
+                    console.log("total : " + JSON.stringify(resvar));
                         speech=JSON.stringify(resvar);
                         var i=0;
                      /* for(i=0;i<resvar.response.size();i++){
@@ -82,7 +82,7 @@ console.log('>>>'+requestBody.result.parameters.SearchtermText);
                     //console.log("fetched : " + result.records.length);
                   });
                 }
-         //   }
+           }
         }
   
         console.log('result: ', speech);
