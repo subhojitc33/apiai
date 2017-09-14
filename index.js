@@ -9,13 +9,14 @@ var username=process.env.SF_USER_NAME;
 var password=process.env.SF_PASSWORD;
 const express = require('express');
 const bodyParser = require('body-parser');
+
 var sf = require('node-salesforce');
    
 
 //Connected App credentials for OAUTH request
 var conn = new sf.Connection({
   // you can change loginUrl to connect to sandbox or prerelease env. 
-  loginUrl : 'https://login.salesforce.com' 
+  loginUrl : 'https://test.salesforce.com' 
 });
 //var accesstoken
 conn.login(username, password, function(err, userInfo) {
