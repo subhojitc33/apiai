@@ -21,6 +21,10 @@
 		"SF_REDIRECT_URI": {
 			"description": "Redirect URI of your Salesforce Connected App",
 			"value": "https://layla.amazon.com/api/skill/link/M2ZXTLNFRIDBRA"
+		},
+		"SF_ENV_URI": {
+			"description": "Redirect URI of your Salesforce Connected App",
+			"value": "https://test.salesforce.com"
 		}
 	}
 }
