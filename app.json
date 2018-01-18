@@ -4,19 +4,19 @@
 	"env": {
 		"SF_CLIENT_ID": {
 			"description": "Consumer Key of your Salesforce Connected App",
-			"value": "3MVG9ZL0ppGP5UrAjkXOacFI9lqNFAA3UZbWkFy3RyiCKzE7PfmhttvbQo3MnEW.V2ccoEBQnktQuaI92PHcm"
+			"value": "3MVG9ahGHqp.k2_zn_77j50TsrKfkLThOg6uRCFbobOiCjOqx1DPc1lPqLIzKzTq3vAbqNT4QCFtaCS35EBEe"
 		},
 		"SF_CLIENT_SECRET": {
 			"description": "Consumer Secret of your Salesforce Connected App",
-			"value": "4700911389884901991"
+			"value": "242473386852241815"
 		},
 		"SF_USER_NAME": {
 			"description": "Salesforce username for your integration user",
-			"value": "subhojit_dev3@gmail.com"
+			"value": "subhchakraborty@deloitte.com.dforce"
 		},
 		"SF_PASSWORD": {
 			"description": "Salesforce password for your integration user",
-			"value": "November@20133qH7Z56TR2QjNUFgKZ4xCPAEg"
+			"value": "3March@2013"
 		},
 		"SF_REDIRECT_URI": {
 			"description": "Redirect URI of your Salesforce Connected App",
@@ -25,6 +25,10 @@
 		"SF_ENV_URI": {
 			"description": "Redirect URI of your Salesforce Connected App",
 			"value": "https://test.salesforce.com"
+		},
+		"SF_Endpoint_URI": {
+			"description": "REST endpoint URI of your Salesforce Connected App",
+			"value": "/analyzeRequest/"
 		}
 	}
 }
