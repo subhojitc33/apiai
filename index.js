@@ -8,6 +8,7 @@ var DEBUG_ON = process.env.DEBUG_ON || true;
 var username=process.env.SF_USER_NAME;
 var password=process.env.SF_PASSWORD;
 var envuri=process.env.SF_ENV_URI;
+var endpoint=process.env.SF_Endpoint_URI;
 const express = require('express');
 const bodyParser = require('body-parser');
 
@@ -61,9 +62,10 @@ console.log('>>>'+requestBody.result.parameters.SearchtermText);
                 if (requestBody.result.parameters.SearchtermText!='') {
                     
                     speech += 'action: ' + requestBody.result.action;
-                   console.log('>>>'+requestBody.result.parameters.SearchtermText);
-                        var body={key:requestBody.result.parameters.SearchtermText};
-                     conn.apex.post("/analyzeRequest/", body, function(errv,resvar)  {
+                   console.log('>>>'+requestBody.result.parameters.keyword);
+                   console.log('>>>'+requestBody.result.parameters.Object);
+                        var body={key:requestBody.result.parameters.keyword,Object:equestBody.result.parameters.Object};
+                     conn.apex.post(endpoint, body, function(errv,resvar)  {
                     if (errv) {  console.error(errv); }
                     console.log("total : " + JSON.stringify(resvar));
                         speech=JSON.stringify(resvar);
