@@ -64,7 +64,7 @@ console.log('>>>'+requestBody.result.parameters.SearchtermText);
                     speech += 'action: ' + requestBody.result.action;
                    console.log('>>>'+requestBody.result.parameters.keyword);
                    console.log('>>>'+requestBody.result.parameters.Object);
-                        var body={key:requestBody.result.parameters.keyword,Object:equestBody.result.parameters.Object};
+                        var body={key:requestBody.result.parameters.keyword,Object:requestBody.result.parameters.Object};
                      conn.apex.post(endpoint, body, function(errv,resvar)  {
                     if (errv) {  console.error(errv); }
                     console.log("total : " + JSON.stringify(resvar));
