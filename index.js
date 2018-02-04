@@ -61,7 +61,16 @@ restService.post('/hook', function (req, res) {
 console.log('>>>'+requestBody.result.parameters.SearchtermText);
                 if (requestBody.result.parameters.SearchtermText!='') {
                     
-                    speech += 'action: ' + requestBody.result.action;
+                   // speech += 'action: ' + requestBody.result.action;
+                   if(requestBody.result.action!=null && requestBody.result.action.includes('smalltalk')){
+                      speech=speech;
+                  
+                    return res.json({
+						speech: speech,
+						displayText: speech,
+						source: 'apiai-webhook-sample'
+					});
+					}
                    console.log('>>>'+requestBody.result.parameters.keyword);
                    console.log('>>>'+requestBody.result.parameters.Object);
                         var body={key:requestBody.result.parameters.keyword,param:requestBody.result.parameters.Object};
@@ -78,7 +87,8 @@ console.log('>>>'+requestBody.result.parameters.SearchtermText);
                          
                       } 
                     */    
-                        return res.json({
+                     
+                           return res.json({
             speech: speech,
             displayText: speech,
             source: 'apiai-webhook-sample'
